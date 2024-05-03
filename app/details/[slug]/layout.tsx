@@ -1,8 +1,7 @@
+import { Nav } from "@/components/Nav";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { Suspense } from "react";
-import { Nav } from "@/components/Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,11 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Nav />
-        <Suspense fallback={<h1>Loading...</h1>}>{children}</Suspense>
-      </body>
-    </html>
+    <>
+      {" "}
+      {/* <Nav /> */}
+      <Suspense fallback={<h1>Loading...</h1>}>{children}</Suspense>
+    </>
   );
 }
